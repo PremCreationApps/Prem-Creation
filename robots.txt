@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://prem-creation-3e151.web.app/sitemap.xml
+Sitemap: https://premcreationapps.github.io/Prem-Creation/sitemap.xml
