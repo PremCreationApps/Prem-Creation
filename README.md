@@ -8,7 +8,7 @@ Firebase Hosting:
 https://prem-creation-3e151.web.app
 
 GitHub Pages:
-"https://premcreationapps.github.io/Prem-Creation/"
+"https://premcreationapps.github.io/Prem-Creation"
 
 📱 About
 
@@ -66,5 +66,5 @@ For questions, feedback, or collaboration, please visit the official Prem Creati
 
 ---
 
-Prem Creation Android Apps Store 
+Prem Creation Android Apps Store:
 https://prem-creation-3e151.web.app
