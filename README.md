@@ -17,8 +17,8 @@ Prem Creation develops Android applications and software projects focused on use
 Featured Projects
 
 - PeerDrop — Android-to-Android file transfer
-- AirBridge — Local Wi-Fi/Hotspot file transfer
-- TransferHub — Android-to-PC file transfer
+- TwinShare — Local Wi-Fi/Hotspot file transfer
+- HifyShare — Android-to-PC file transfer
 - Other upcoming Android projects
 
 🛠️ Website Technologies
@@ -67,4 +67,4 @@ For questions, feedback, or collaboration, please visit the official Prem Creati
 ---
 
 Prem Creation
-Android Apps & Software Projects
+Android Apps 
