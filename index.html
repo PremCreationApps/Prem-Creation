@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="google-site-verification" content="flTa6ZPrbX2IQtKK2Nbj4DSbrWxBPzuxQ98C_frv_WY" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prem Creation | Android Apps Store</title>
+
+    <meta name="description" content="Prem Creation develops useful Android apps and software focused on simple, reliable and user-friendly experiences.">
+    <meta name="keywords" content="Prem Creation, Android apps, PeerDrop, AirBridge, TransferHub, file transfer apps">
+    <meta name="author" content="Prem Creation">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+
+    <meta name="theme-color" content="#0f172a">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1120px, 92%);
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.96);
+            border-bottom: 1px solid #e2e8f0;
+            backdrop-filter: blur(12px);
+        }
+
+        .nav {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 21px;
+            font-weight: 800;
+        }
+
+        .brand img {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        .menu-button {
+            display: none;
+            border: 0;
+            background: transparent;
+            font-size: 27px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 105px 0 90px;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(37,99,235,0.12), transparent 32%),
+                radial-gradient(circle at 85% 30%, rgba(124,58,237,0.10), transparent 30%),
+                #ffffff;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 50px;
+            background: #eff6ff;
+            color: #2563eb;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 24px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #64748b;
+            font-size: 19px;
+        }
+
+        .hero-buttons {
+            margin-top: 34px;
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 22px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 15px;
+            transition: 0.2s ease;
+        }
+
+        .button-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .button-primary:hover {
+            transform: translateY(-2px);
+            background: #1d4ed8;
+        }
+
+        .button-secondary {
+            background: white;
+            color: #0f172a;
+            border: 1px solid #cbd5e1;
+        }
+
+        .button-secondary:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 85px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 45px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .section-header p {
+            color: #64748b;
+        }
+
+        /* APPS */
+
+        .apps {
+            background: #f8fafc;
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .app-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 28px;
+            transition: 0.25s ease;
+            box-shadow: 0 8px 30px rgba(15,23,42,0.04);
+        }
+
+        .app-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 45px rgba(15,23,42,0.10);
+        }
+
+        .app-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 17px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            background: #f1f5f9;
+        }
+
+        .app-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .app-card p {
+            color: #64748b;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .app-link {
+            color: #2563eb;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about h2 {
+            font-size: 38px;
+            margin-bottom: 18px;
+        }
+
+        .about p {
+            color: #64748b;
+            margin-bottom: 16px;
+        }
+
+        .feature-list {
+            display: grid;
+            gap: 14px;
+            margin-top: 25px;
+        }
+
+        .feature {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: #eff6ff;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .feature strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .feature span {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .about-box {
+            min-height: 350px;
+            border-radius: 28px;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            padding: 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 25px 60px rgba(15,23,42,0.18);
+        }
+
+        .about-box h3 {
+            font-size: 30px;
+            margin-bottom: 14px;
+        }
+
+        .about-box p {
+            color: #cbd5e1;
+        }
+
+        /* CTA */
+
+        .cta {
+            background: #0f172a;
+            color: white;
+        }
+
+        .cta-box {
+            text-align: center;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #cbd5e1;
+            margin-bottom: 28px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #020617;
+            color: #94a3b8;
+            padding: 45px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 35px;
+        }
+
+        .footer-brand {
+            color: white;
+            font-size: 21px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            font-size: 14px;
+            max-width: 380px;
+        }
+
+        .footer-column h4 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-column a {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 9px;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #1e293b;
+            padding-top: 22px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                left: 4%;
+                right: 4%;
+                top: 76px;
+                padding: 20px;
+                background: white;
+                border: 1px solid #e2e8f0;
+                border-radius: 15px;
+                box-shadow: 0 15px 40px rgba(15,23,42,0.12);
+                flex-direction: column;
+                gap: 17px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .app-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .hero {
+                padding: 75px 0 65px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .section-header h2,
+            .about h2,
+            .cta h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header>
+    <div class="container nav">
+
+        <a href="#" class="brand">
+            <img src="/favicon.png" alt="Prem Creation">
+            <span>Prem Creation</span>
+        </a>
+
+        <button class="menu-button" onclick="toggleMenu()" aria-label="Open menu">
+            ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#apps" onclick="closeMenu()">Apps</a>
+            <a href="#about" onclick="closeMenu()">About</a>
+            <a href="#contact" onclick="closeMenu()">Contact</a>
+            <a href="/privacy-policy.html">Privacy</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- HERO -->
+<main>
+
+<section class="hero">
+
+    <div class="container hero-content">
+
+        <span class="badge">ANDROID APPS STORE</span>
+
+        <h1>
+            Building useful apps<br>
+            for a <span class="gradient-text">better experience.</span>
+        </h1>
+
+        <p>
+            Prem Creation creates simple, practical and user-friendly
+            Android applications designed to make everyday digital tasks easier.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#apps" class="button button-primary">
+                Explore Our Apps
+            </a>
+
+            <a href="#about" class="button button-secondary">
+                Learn More
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- APPS -->
+<section class="apps" id="apps">
+
+    <div class="container">
+
+        <div class="section-header">
+            <h2>Our Apps</h2>
+            <p>
+                Explore applications developed by Prem Creation.
+            </p>
+        </div>
+
+        <div class="app-grid">
+
+            <!-- PeerDrop -->
+            <article class="app-card">
+
+                <img
+                    src="/peerdrop.png"
+                    class="app-icon"
+                    alt="PeerDrop">
+
+                <h3>PeerDrop</h3>
+
+                <p>
+                    A local file transfer application designed to
+                    transfer files between Android devices using
+                    Wi-Fi and hotspot connectivity.
+                <a href="https://prem-creation.blogspot.com/2026/08/peerdrop-offline-secure-file-sharing.html"
+                  class="app-link"
+                  target="_blank"
+                  rel="noopener">
+                  Learn More →
+                </a>
+
+            </article>
+
+
+            <!-- TwinShare -->
+            <article class="app-card">
+
+                <img
+                    src="/favicon.png"
+                    class="app-icon"
+                    alt="TwinShare">
+
+                <h3>TwinShare</h3>
+
+                <p>
+                    A simple Android-to-Android file transfer
+                    solution focused on direct local connectivity
+                    without requiring mobile data.
+                </p>
+
+                <a href="#" class="app-link">
+                    Learn More →
+                </a>
+
+            </article>
+
+
+            <!-- HifyShare -->
+            <article class="app-card">
+
+                <img
+                    src="/hifyshare.png"
+                    class="app-icon"
+                    alt="HifyShare">
+
+                <h3>HifyShare</h3>
+
+                <p>
+                    An Android-to-PC file transfer project with
+                    support for multiple independent transfer
+                    technologies and server engines.
+                </p>
+
+                <a href="https://prem-creation.blogspot.com/2026/10/hifyshare-fast-and-simple-file-transfer.html" class="app-link">
+                    Learn More →
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <div class="container about-grid">
+
+        <div>
+
+            <h2>About Prem Creation</h2>
+
+            <p>
+                Prem Creation is focused on creating useful
+                Android applications with a clean interface,
+                practical features and straightforward user experiences.
+            </p>
+
+            <p>
+                Our goal is simple: build applications that are
+                easy to understand, useful in everyday situations,
+                and reliable for users.
+            </p>
+
+            <div class="feature-list">
+
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <strong>Simple Design</strong>
+                        <span>Clean and easy-to-use interfaces.</span>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <strong>Useful Features</strong>
+                        <span>Features designed around practical needs.</span>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <strong>Continuous Improvement</strong>
+                        <span>Apps are improved through testing and updates.</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-box">
+
+            <h3>Technology with purpose.</h3>
+
+            <p>
+                We believe good software doesn't need to be complicated.
+                Prem Creation focuses on building practical tools with
+                a clear purpose and a user-friendly experience.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="cta" id="contact">
+
+    <div class="container cta-box">
+
+        <h2>Have a question?</h2>
+
+        <p>
+            For app information, feedback, privacy questions or
+            other enquiries, visit our contact page.
+        </p>
+
+        <a href="/contact.html" class="button button-primary">
+            Contact Prem Creation
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+                <div class="footer-brand">Prem Creation</div>
+
+                <p>
+                    Android apps created with a focus
+                    on simplicity, usefulness and user experience.
+                </p>
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Company</h4>
+
+                <a href="#about">About Us</a>
+                <a href="/contact.html">Contact</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Legal</h4>
+
+                <a href="/privacy-policy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Use</a>
+                <a href="/disclaimer.html">Disclaimer</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+            © <span id="year"></span> Prem Creation. All rights reserved.
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    function closeMenu() {
+        document.getElementById("navLinks").classList.remove("active");
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
