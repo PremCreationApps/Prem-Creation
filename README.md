@@ -4,11 +4,8 @@ Official website project for Prem Creation — showcasing Android applications, 
 
 🌐 Website
 
-Firebase Hosting:
-https://prem-creation-3e151.web.app
+https://premcreationapps.github.io/Prem-Creation
 
-GitHub Pages:
-"https://premcreationapps.github.io/Prem-Creation"
 
 📱 About
 
@@ -67,4 +64,4 @@ For questions, feedback, or collaboration, please visit the official Prem Creati
 ---
 
 Prem Creation Android Apps Store:
-https://prem-creation-3e151.web.app
+https://premcreationapps.github.io
