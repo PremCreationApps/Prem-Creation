@@ -799,5 +799,320 @@
 
 </script>
 
+  
+<!-- ===================================
+ PREM CREATION APPZONE DOWNLOAD BUTTON
+ Expanded: 3 seconds
+ Minimized: 5 seconds
+ Continuous animation
+=================================== -->
+
+<a href="https://github.com/PremCreationApps/Prem-Creation/raw/refs/heads/main/AppZone.apk"
+   class="pc-appzone-float"
+   aria-label="Download AppZone APK">
+
+  <span class="pc-appzone-label">
+    <span class="pc-appzone-emoji">📲</span>
+    <span>Download AppZone</span>
+  </span>
+
+  <span class="pc-appzone-arrow">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 3v12m-5-5 5 5 5-5M5 17v4h14v-4"/>
+    </svg>
+  </span>
+
+</a>
+
+<style>
+
+/* MAIN BUTTON */
+
+.pc-appzone-float {
+  position: fixed;
+  right: 18px;
+  bottom: 22px;
+  z-index: 999999;
+
+  width: 190px;
+  height: 52px;
+  padding: 0 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50px;
+
+  background: linear-gradient(
+    135deg,
+    #1769e0,
+    #4936d9
+  );
+
+  color: #ffffff !important;
+
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+
+  text-decoration: none !important;
+  white-space: nowrap;
+  overflow: hidden;
+
+  box-shadow: 0 5px 18px rgba(23,105,224,.35);
+
+  transition:
+    width .5s ease,
+    padding .5s ease,
+    box-shadow .3s ease;
+
+  animation: appzoneCycle 8s infinite;
+}
+
+/* EXPANDED TEXT */
+
+.pc-appzone-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  opacity: 1;
+
+  transition: opacity .3s ease;
+}
+
+.pc-appzone-emoji {
+  font-size: 19px;
+}
+
+/* DOWNLOAD ARROW */
+
+.pc-appzone-arrow {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 25px;
+  height: 25px;
+
+  opacity: 0;
+  transform: scale(.6);
+
+  transition:
+    opacity .3s ease,
+    transform .3s ease;
+}
+
+.pc-appzone-arrow svg {
+  width: 25px;
+  height: 25px;
+
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* 3 SEC EXPANDED + 5 SEC MINIMIZED */
+
+@keyframes appzoneCycle {
+
+  0%, 37.5% {
+    width: 190px;
+    padding: 0 15px;
+  }
+
+  43.75%, 93.75% {
+    width: 52px;
+    padding: 0;
+  }
+
+  100% {
+    width: 190px;
+    padding: 0 15px;
+  }
+
+}
+
+/* MINIMIZED STATE */
+
+.pc-appzone-float.is-minimized
+.pc-appzone-label {
+  opacity: 0;
+}
+
+.pc-appzone-float.is-minimized
+.pc-appzone-arrow {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* HOVER EFFECT */
+
+.pc-appzone-float:hover {
+  box-shadow: 0 7px 24px rgba(23,105,224,.5);
+}
+
+/* PAUSE ANIMATION ON INTERACTION */
+
+.pc-appzone-float.paused {
+  animation-play-state: paused;
+}
+
+/* MOBILE */
+
+@media (max-width:480px) {
+
+  .pc-appzone-float {
+    right: 12px;
+    bottom: 15px;
+  }
+
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .pc-appzone-float {
+    animation: none;
+    width: 190px;
+  }
+
+  .pc-appzone-label {
+    opacity: 1;
+  }
+
+  .pc-appzone-arrow {
+    opacity: 0;
+  }
+
+}
+
+</style>
+
+<script>
+(function() {
+
+  const btn = document.querySelector(
+    '.pc-appzone-float'
+  );
+
+  if (!btn) return;
+
+  const reducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+
+  let start = performance.now();
+  let pausedAt = 0;
+  let isPaused = false;
+
+  const expandedTime = 3000;
+  const minimizedTime = 5000;
+  const totalTime = expandedTime + minimizedTime;
+
+  function updateButton() {
+
+    if (isPaused || reducedMotion) return;
+
+    const elapsed =
+      (performance.now() - start) % totalTime;
+
+    const minimized = elapsed >= expandedTime;
+
+    btn.classList.toggle(
+      'is-minimized',
+      minimized
+    );
+
+    btn.setAttribute(
+      'aria-label',
+      minimized
+        ? 'Download AppZone APK'
+        : 'Download AppZone'
+    );
+  }
+
+  function pauseAnimation() {
+
+    if (isPaused || reducedMotion) return;
+
+    isPaused = true;
+    pausedAt = performance.now();
+
+    btn.classList.add('paused');
+  }
+
+  function resumeAnimation() {
+
+    if (!isPaused || reducedMotion) return;
+
+    const pauseDuration =
+      performance.now() - pausedAt;
+
+    start += pauseDuration;
+
+    isPaused = false;
+
+    btn.classList.remove('paused');
+
+    updateButton();
+  }
+
+  btn.addEventListener(
+    'mouseenter',
+    pauseAnimation
+  );
+
+  btn.addEventListener(
+    'mouseleave',
+    resumeAnimation
+  );
+
+  btn.addEventListener(
+    'focus',
+    pauseAnimation
+  );
+
+  btn.addEventListener(
+    'blur',
+    resumeAnimation
+  );
+
+  btn.addEventListener(
+    'touchstart',
+    pauseAnimation,
+    { passive: true }
+  );
+
+  btn.addEventListener(
+    'touchend',
+    resumeAnimation,
+    { passive: true }
+  );
+
+  if (!reducedMotion) {
+
+    function animate() {
+
+      updateButton();
+
+      requestAnimationFrame(animate);
+
+    }
+
+    animate();
+
+  }
+
+})();
+</script>
+
+
 </body>
 </html>
